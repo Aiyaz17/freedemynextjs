@@ -82,16 +82,16 @@ function Home() {
         <div className="section s2">
           <div>
             {googleTotal === 0 ? (
-              <h1 className="choose-category">
+              <h2 className="choose-category">
                 <Skeleton type="category-title" />
-              </h1>
+              </h2>
             ) : (
-              <h1 className="choose-category">
+              <h2 className="choose-category">
                 Google Courses{" "}
                 <span className="choose-category-light">
                   ({numberWithCommas(googleTotal)} Courses)
                 </span>
-              </h1>
+              </h2>
             )}
             <div className="card-container" name="google">
               {googleCategory.length < 1
@@ -99,16 +99,16 @@ function Home() {
                 : renderCategories("google")}
             </div>
             {freedemyTotal === 0 ? (
-              <h1 className="choose-category">
+              <h2 className="choose-category">
                 <Skeleton type="category-title" />
-              </h1>
+              </h2>
             ) : (
-              <h1 className="choose-category ">
+              <h2 className="choose-category ">
                 Udemy Courses{" "}
                 <span className="choose-category-light">
                   ({numberWithCommas(freedemyTotal)} Courses)
                 </span>
-              </h1>
+              </h2>
             )}
             <div className="card-container " name="freedemy">
               {googleCategory.length < 1
