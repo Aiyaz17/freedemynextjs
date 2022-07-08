@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://freedemy.co.in/api/site-map
