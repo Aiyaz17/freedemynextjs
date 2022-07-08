@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function PrivacyPolicyWeb() {
+  {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <div className="privacy">
-      {window.scrollTo({ top: 0, behavior: "smooth" })}
       <p className="privacy-heading">Privacy Policy for Freedemy</p>
       <p className="privacy-text">
         At Freedemy, accessible from{" "}

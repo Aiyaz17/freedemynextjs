@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function TermsWeb() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   return (
     <div className="privacy">
-      {window.scrollTo({ top: 0, behavior: "smooth" })}
       <p className="privacy-heading">Terms and Conditions</p>
 
       <p>Welcome to Freedemy!</p>
