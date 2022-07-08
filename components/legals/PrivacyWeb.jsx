@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 
 function PrivacyPolicyWeb() {
-  {
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  });
 
   return (
     <div className="privacy">
