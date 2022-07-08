@@ -8,7 +8,6 @@ import Axios from "axios";
 import Skeleton from "./skeletons/skeleton";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 import { useRouter } from "next/router";
-
 function CourseDetails() {
   const [details, setDetails] = useState({});
   const [loading, setLoading] = useState(true);

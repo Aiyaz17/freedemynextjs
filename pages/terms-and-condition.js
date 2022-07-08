@@ -1,11 +1,13 @@
 import React from "react";
 import PrivacyPolicyWeb from "../components/legals/PrivacyWeb";
+import Meta from "../components/Meta";
 
 const Terms = () => {
   return (
-    <div>
+    <>
+      <Meta title={"Terms and Condition | Freedemy"} />
       <PrivacyPolicyWeb />
-    </div>
+    </>
   );
 };
 
