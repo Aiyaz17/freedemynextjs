@@ -127,6 +127,9 @@ body {
   top: 7px;
   color: var(--blue);
 }
+.search-icon svg {
+  max-width: 50px;
+}
 .search-bar-container {
   font-family: Google-sans, sans-serif;
   margin-left: auto;
