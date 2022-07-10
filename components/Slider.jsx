@@ -21,7 +21,7 @@ function Slider() {
 
   return (
     <div className="trending-course-slider">
-      <h1 className="choose-category">Trending Courses</h1>
+      <h2 className="choose-category">Trending Courses</h2>
       <Swiper
         spaceBetween={20}
         slidesPerView={3}

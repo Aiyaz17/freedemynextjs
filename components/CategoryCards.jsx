@@ -7,9 +7,9 @@ function CategoryCards(props) {
 
   return (
     <div className="new-category-card">
-      <h1 className="new-title">
+      <h2 className="new-title">
         {props.title} ({numberWithCommas(props.total)})
-      </h1>
+      </h2>
       <div
         className="category-img"
         style={{
