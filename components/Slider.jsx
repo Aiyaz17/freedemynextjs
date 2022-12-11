@@ -12,7 +12,8 @@ function Slider() {
   const [trendingCourses, setTrendingCourses] = useState([]);
 
   useEffect(() => {
-    Axios.get("https://freedemyclient.herokuapp.com/trending-courses").then(
+    // Axios.get("https://freedemyclient.herokuapp.com/trending-courses").then(
+    Axios.get("https://freedemyclientapi.onrender.com/trending-courses").then(
       (data) => {
         setTrendingCourses(data.data);
       }

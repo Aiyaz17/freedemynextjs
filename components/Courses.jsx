@@ -26,7 +26,8 @@ function Courses({ match }) {
       setMiniCategory(clickedOn);
       if (clickedOn.includes("&")) clickedOn = clickedOn.replace("&", "%26");
       clickedOn = clickedOn.replaceAll(" ", "%20");
-      var url = `https://freedemyclient.herokuapp.com/api/${megaCategory}?page=${1}&category=${clickedOn}`; // heroku
+      // var url = `https://freedemyclient.herokuapp.com/api/${megaCategory}?page=${1}&category=${clickedOn}`; // heroku
+      var url = `https://freedemyclientapi.onrender.com/api/${megaCategory}?page=${1}&category=${clickedOn}`; // heroku
       // var url = `https://free-demy.netlify.app/.netlify/functions/${megaCategory}?page=${1}&category=${clickedOn}`; // netlify
       fetch(url)
         .then((response) => response.json())
@@ -46,7 +47,8 @@ function Courses({ match }) {
     var clickedOn = miniCategory;
     clickedOn = clickedOn.replace(" ", "%20");
     if (clickedOn.includes("&")) clickedOn = clickedOn.replace("&", "%26");
-    var url = `https://freedemyclient.herokuapp.com/api/${megaCategory}?page=${
+    // var url = `https://freedemyclient.herokuapp.com/api/${megaCategory}?page=${
+      var url = `https://freedemyclientapi.onrender.com/api/${megaCategory}?page=${
       onPage + 1
     }&category=${clickedOn}`; // heroku
     fetch(url)

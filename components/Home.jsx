@@ -15,7 +15,9 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("https://freedemyclient.herokuapp.com/api/all-details") // heroku
+      // .get("https://freedemyclient.herokuapp.com/api/all-details") // heroku
+      .get("https://freedemyclientapi.onrender.com/api/all-details") // render
+      // .get(process.env.BACKEND + "/api/all-details") // heroku
       .then((data) => {
         setFreedemyCategory(data.data.freedemy);
         setGoogleCategory(data.data.google);

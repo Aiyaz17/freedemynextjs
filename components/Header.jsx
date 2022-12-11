@@ -22,7 +22,8 @@ function Header(props) {
 
       axios
         .get(
-          `https://freedemyclient.herokuapp.com/search?search=${searchBarValue}`,
+          // `https://freedemyclient.herokuapp.com/search?search=${searchBarValue}`,
+          `https://freedemyclientapi.onrender.com/search?search=${searchBarValue}`,
           { cancelToken: cancel.token }
         ) // heroku
         .then((data) => {

@@ -23,7 +23,8 @@ function CourseDetails() {
       var url = router.asPath.split("/");
       setMegaCategory(url[1]);
       Axios.get(
-        "https://freedemyclient.herokuapp.com" + `/details/${url[1]}/${url[3]}`
+        // "https://freedemyclient.herokuapp.com" + `/details/${url[1]}/${url[3]}`
+        "https://freedemyclientapi.onrender.com" + `/details/${url[1]}/${url[3]}`
       ) // heroku
         .then((data) => {
           setDetails(data.data);
