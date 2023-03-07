@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
+import axios from "axios";
 import CourseSkel from "./skeletons/CourseSkel";
 import CourseCards from "./CourseCards";
 import Link from "next/link";
@@ -7,17 +7,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore, { Pagination } from "swiper";
+import config from "../config";
 SwiperCore.use(Pagination);
 function Slider() {
   const [trendingCourses, setTrendingCourses] = useState([]);
-
+  const baseUrl = config();
   useEffect(() => {
-    // Axios.get("https://freedemyclient.herokuapp.com/trending-courses").then(
-    Axios.get("https://freedemyclientapi.onrender.com/trending-courses").then(
-      (data) => {
-        setTrendingCourses(data.data);
-      }
-    );
+    // axios.get("https://freedemyclient.herokuapp.com/trending-courses").then(
+    // axios.get("https://freedemyclientapi.onrender.com/trending-courses").then(
+    axios.get(`${baseUrl}/trending-courses`).then((data) => {
+      setTrendingCourses(data.data);
+    });
   }, []);
 
   return (

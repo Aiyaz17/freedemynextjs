@@ -6,7 +6,7 @@ const CourseD = () => {
   return (
     <div>
       <Meta title={"More than 8000 Udemy Course With Certificates."} />
-      <CourseDetails />
+      <CourseDetails category="udemy" />
     </div>
   );
 };

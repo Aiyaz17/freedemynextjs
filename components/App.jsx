@@ -18,7 +18,7 @@ function App() {
         <Switch>
           {/* <Route path="/google/:category" component={Courses} />  */}
           {/* <Route path="/udemy/:category" component={Courses} /> */}
-          <Route path="/details/:category/:title" component={CourseDetails} />
+          {/* <Route path="/details/:category/:title" component={CourseDetails} /> */}
           {/* <Route path="/terms-and-condition-app" exact component={TermsApp} /> */}
           {/* <Route
             path="/privacy-policy-app"

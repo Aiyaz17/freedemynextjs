@@ -8,7 +8,8 @@ import Axios from "axios";
 import Skeleton from "./skeletons/skeleton";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 import { useRouter } from "next/router";
-function CourseDetails() {
+import config from "../config";
+function CourseDetails({ category }) {
   const [details, setDetails] = useState({});
   const [loading, setLoading] = useState(true);
   const [onTabletOrLess, setOnTabletOrLess] = useState(false);
@@ -16,15 +17,21 @@ function CourseDetails() {
   var DetailPagePaddingGoogle;
   const router = useRouter();
 
+  var { title } = router.query;
+
+  // if (category === undefined) category = "google";
+  console.log({ category, title, queries: router.query });
   useEffect(() => {
     setLoading(true);
     if (router.asPath !== router.route) {
       // /details/google/Land your next job
       var url = router.asPath.split("/");
       setMegaCategory(url[1]);
+      const baseUrl = config();
       Axios.get(
         // "https://freedemyclient.herokuapp.com" + `/details/${url[1]}/${url[3]}`
-        "https://freedemyclientapi.onrender.com" + `/details/${url[1]}/${url[3]}`
+        // "https://freedemyclientapi.onrender.com" + `/details/${url[1]}/${url[3]}`
+        `${baseUrl}/details/${category}/${title}`
       ) // heroku
         .then((data) => {
           setDetails(data.data);

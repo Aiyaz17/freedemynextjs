@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import Link from "next/link";
 import axios from "axios";
 import SearchIcon from "@material-ui/icons/Search";
+import config from "../config";
 
 function Header(props) {
   const [searchResult, setSearchResult] = useState([]);
@@ -19,11 +20,12 @@ function Header(props) {
       }
       var cancel = axios.CancelToken.source();
       setCancelToken(cancel);
-
+      const baseUrl = config();
       axios
         .get(
           // `https://freedemyclient.herokuapp.com/search?search=${searchBarValue}`,
-          `https://freedemyclientapi.onrender.com/search?search=${searchBarValue}`,
+          // `https://freedemyclientapi.onrender.com/search?search=${searchBarValue}`,
+          `${baseUrl}/search?search=${searchBarValue}`,
           { cancelToken: cancel.token }
         ) // heroku
         .then((data) => {

@@ -64,7 +64,8 @@ function SearchBar(props) {
 
             return (
               <Link
-                href={`/details/${megaCategory}/${titleUrl}`}
+                // href={`/details/${megaCategory}/${titleUrl}`}
+                href={`/${megaCategory}/course/${titleUrl}`}
                 style={{ textDecoration: "none", color: "inherit" }}
                 key={index}
               >

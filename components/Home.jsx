@@ -6,17 +6,19 @@ import axios from "axios";
 import Link from "next/link";
 import Skeleton from "./skeletons/skeleton";
 import CategorySkel from "./skeletons/CategorySkel";
+import config from "../config";
 
 function Home() {
   const [freedemyCategory, setFreedemyCategory] = React.useState([]);
   const [googleCategory, setGoogleCategory] = useState([]);
   const [freedemyTotal, setFreedemyTotal] = useState(0);
   const [googleTotal, setGoogleTotal] = useState(0);
-
+  const baseUrl = config();
   useEffect(() => {
     axios
       // .get("https://freedemyclient.herokuapp.com/api/all-details") // heroku
-      .get("https://freedemyclientapi.onrender.com/api/all-details") // render
+      // .get("https://freedemyclientapi.onrender.com/api/all-details") // render
+      .get(`${baseUrl}/api/all-details`) // render
       // .get(process.env.BACKEND + "/api/all-details") // heroku
       .then((data) => {
         setFreedemyCategory(data.data.freedemy);
@@ -73,8 +75,8 @@ function Home() {
   }
   return (
     <div>
-      {typeof window !== "undefined" &&
-        window.scrollTo({ top: 0, behavior: "smooth" })}
+      {/* {typeof window !== "undefined" &&
+        window.scrollTo({ top: 0, behavior: "smooth" })} */}
 
       <div className="container">
         <div className="section s1">

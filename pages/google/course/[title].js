@@ -6,7 +6,7 @@ const CourseD = () => {
   return (
     <>
       <Meta title={"More than 150 Google Course With Certificates."} />
-      <CourseDetails />
+      <CourseDetails category="google" />
     </>
   );
 };

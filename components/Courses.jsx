@@ -4,6 +4,7 @@ import Loading from "./Loading";
 import Link from "next/link";
 import CourseSkel from "./skeletons/CourseSkel";
 import { useRouter } from "next/router";
+import config from "../config";
 function Courses({ match }) {
   const [resultArray, setResultArray] = useState([]);
   const [onPage, setOnPage] = useState(1);
@@ -13,7 +14,7 @@ function Courses({ match }) {
   const [miniCategory, setMiniCategory] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-
+  const baseUrl = config();
   useEffect(() => {
     if (router.asPath !== router.route) {
       setOnPage(1);
@@ -27,7 +28,9 @@ function Courses({ match }) {
       if (clickedOn.includes("&")) clickedOn = clickedOn.replace("&", "%26");
       clickedOn = clickedOn.replaceAll(" ", "%20");
       // var url = `https://freedemyclient.herokuapp.com/api/${megaCategory}?page=${1}&category=${clickedOn}`; // heroku
-      var url = `https://freedemyclientapi.onrender.com/api/${megaCategory}?page=${1}&category=${clickedOn}`; // heroku
+      // var url = `https://freedemyclientapi.onrender.com/api/${megaCategory}?page=${1}&category=${clickedOn}`; // heroku
+      // var url = `https://freedemyclientapi.onrender.com/api/${megaCategory}?page=${1}&category=${clickedOn}`; // render
+      const url = `${baseUrl}/api/${megaCategory}?page=${1}&category=${clickedOn}`;
       // var url = `https://free-demy.netlify.app/.netlify/functions/${megaCategory}?page=${1}&category=${clickedOn}`; // netlify
       fetch(url)
         .then((response) => response.json())
@@ -48,7 +51,7 @@ function Courses({ match }) {
     clickedOn = clickedOn.replace(" ", "%20");
     if (clickedOn.includes("&")) clickedOn = clickedOn.replace("&", "%26");
     // var url = `https://freedemyclient.herokuapp.com/api/${megaCategory}?page=${
-      var url = `https://freedemyclientapi.onrender.com/api/${megaCategory}?page=${
+    var url = `https://freedemyclientapi.onrender.com/api/${megaCategory}?page=${
       onPage + 1
     }&category=${clickedOn}`; // heroku
     fetch(url)
@@ -78,9 +81,9 @@ function Courses({ match }) {
               })
             : resultArray.map((elem, index) => {
                 var titleUrl = elem.title;
-                if (titleUrl.includes("%")) {
-                  titleUrl = titleUrl.replace("%", "percentageSign");
-                }
+                // if (titleUrl.includes("%")) {
+                //   titleUrl = titleUrl.replace("%", "percentageSign");
+                // }
                 return (
                   <Link
                     href={`/${megaCategory}/course/${titleUrl}`}
